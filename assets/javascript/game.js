@@ -1,7 +1,13 @@
 let game = {
     //game letiables
-    memeArray: ["doot","pizza"],
-    videoLoc: ["https://www.youtube.com/embed/gu4AyUWBr18?autoplay=1","https://www.youtube.com/embed/fdpMPhiG5k0?autoplay=1"],
+    memeArray: ["doot","pizza","koreanpop","kazookid","russiansinger","trumpetboy"],
+    videoLoc: 
+        ["https://www.youtube.com/embed/gu4AyUWBr18?autoplay=1",
+        "https://www.youtube.com/embed/fdpMPhiG5k0?autoplay=1",
+        "https://www.youtube.com/embed/D9QQvQpDBeE?autoplay=1",
+        "https://www.youtube.com/embed/g-sgw9bPV4A?autoplay=1",
+        "https://www.youtube.com/embed/tVj0ZTS4WF4?autoplay=1",
+        "https://www.youtube.com/embed/Gd0LG6UUclU?autoplay=1"],    
     randIdx: undefined,
     lettersEntered: [],
     wordToGuess: undefined,
@@ -37,7 +43,7 @@ let game = {
         if(this.startGameElem.hasAttribute("style"))
             this.startGameElem.style.display = "";
 
-        this.guessRemaining = 12;
+        this.guessRemaining = 15;
         this.gameOver = false;
         this.lettersGuessedElem.textContent = "";
         this.numOfGuessElem.textContent = this.guessRemaining;
@@ -62,6 +68,7 @@ let game = {
         this.numOfGuessElem.textContent = "";
         this.lettersGuessedElem.textContent = "";
         this.lettersEntered = [];
+        this.randIdx = Math.floor(Math.random() * this.memeArray.length); //keep it really random
     },
 
     displayResult: function() {
@@ -98,31 +105,27 @@ let game = {
     },
 
     displayToScreen:  function(key) {
-        for(let i = 0; i < this.wordToGuess.length; ++i)
-        {
-            if(key == this.wordToGuess[i])
-            {
-                let letterElem = document.getElementsByName(key);
-                if(letterElem.length > 1){
-                    for(let j = 0; j < letterElem.length; ++j)
-                    {   
-                        letterElem[j].textContent = key;
-                        this.wordToGuess.splice(i,1);
-                    }
+        if(this.wordToGuess.indexOf(key) != -1){
+            let letterElem = document.getElementsByName(key);
+            if(letterElem.length > 1){
+                for(var i = 0; i < letterElem.length; ++i){
+                    this.wordToGuess.splice(this.wordToGuess.indexOf(key),1);
+                    letterElem[i].textContent = key;
                 }
-                else
-                {
-                    letterElem[0].textContent = key;
-                    this.wordToGuess.splice(i,1);
-                }    
             }
+            else{
+                this.wordToGuess.splice(this.wordToGuess.indexOf(key),1);
+                letterElem[0].textContent = key;
+            }
+            // console.log("After Splice: " + this.wordToGuess);
         }
 
         this.lettersEntered.push(key);
         this.displayLettersEntered();
 
-        if(this.wordToGuess.length <= 0)
+        if(this.wordToGuess.length <= 0){
             game.gameOver = true;
+        }
     },
 
     startGame:  function() {
@@ -163,7 +166,7 @@ let game = {
 
     run: function() {
         // Main Game Logic
-        console.log("Running Game!");
+        // console.log("Running Game!");
         this.initGame();
         this.startGame();
     },
