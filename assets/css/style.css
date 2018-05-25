@@ -1,0 +1,51 @@
+body {
+    background-color: hotpink;
+}
+
+#winText {
+    display: none;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+#videoBox {
+    width:  440px;
+    height: 380px;
+    display: none;
+}
+
+#imageBox {
+    justify-content: flex-start;
+    width: 350px;
+    height: 400px;
+}
+
+.box {
+    border: dashed;
+    border-color: white;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Slabo 27px', serif;
+    padding-bottom: 20px;
+}
+
+.image.box {
+    padding: 10px;
+}
+
+.guess.box {
+    padding: 100px 100px 300px 100px;
+}
+

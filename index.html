@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <script src="assets/javascript/game.js"></script>
+    </head>
+    <body onload='game.run()'>
+        <audio id="datboi.wav" src="assets/datboi.wav"></audio>
+        <img align="middle" id="logo" src="assets/images/logo.png">
+
+        <div id='game-container'>
+            <div class='image box'>
+                <p id='winText'>YOU WON!!</p>
+                <img id='imageBox' src='assets/images/datboi.jpg'>
+                <iframe id='videoBox'src="https://www.youtube.com/embed/toHe53ux_TI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class='guess box'>
+                <p id='startGame'>Press any Key to Start the Game</p>
+                <p># of Wins</p>
+                <p id='numOfWins'></p>
+                <p>Guess the Word</p>
+                <p id='guessText'></p>
+                <p># of Guess Remaining:</p>
+                <p id='numOfGuess'></p>
+                <p>Letters Guessed</p>
+                <p id='lettersGuessed'></p>
+            </div>
+        </div>
+
+    </body>
+</html>
