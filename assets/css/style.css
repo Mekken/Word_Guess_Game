@@ -17,6 +17,11 @@ body {
 
 }
 
+#button
+{
+    display: block;
+}
+
 #videoBox {
     width:  440px;
     height: 380px;

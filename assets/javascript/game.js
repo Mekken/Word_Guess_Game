@@ -43,6 +43,11 @@ let game = {
         if(this.startGameElem.hasAttribute("style"))
             this.startGameElem.style.display = "";
 
+        document.getElementById("pauseBtn").addEventListener("click", function(event) {
+            game.audioElem.pause();
+            game.audioElem.currentTime = 0;    
+        });
+
         this.guessRemaining = 15;
         this.gameOver = false;
         this.lettersGuessedElem.textContent = "";
