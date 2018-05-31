@@ -3,7 +3,7 @@ let game = {
     memeArray: ["doot","pizza","koreanpop","kazookid","russiansinger","trumpetboy"],
     videoLoc: 
         ["https://www.youtube.com/embed/gu4AyUWBr18?autoplay=1",
-        "https://www.youtube.com/embed/fdpMPhiG5k0?autoplay=1",
+        "https://www.youtube.com/embed/ud1JXqGWPvU?autoplay=1",
         "https://www.youtube.com/embed/D9QQvQpDBeE?autoplay=1",
         "https://www.youtube.com/embed/g-sgw9bPV4A?autoplay=1",
         "https://www.youtube.com/embed/tVj0ZTS4WF4?autoplay=1",
@@ -67,7 +67,7 @@ let game = {
     },
 
     endGame: function() {
-        //initialize letiables
+        //re-initialize variables
         this.startGameElem.removeAttribute("style");
         this.guessTextElem.innerHTML = "";
         this.numOfGuessElem.textContent = "";
